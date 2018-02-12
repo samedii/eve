@@ -1,15 +1,20 @@
-import Problem
 import torch
 
 
-class ToyProblem(Problem.Problem):
+class Problem:
+
+    def loss(self, target, prediction):
+        pass
+
+
+class ToyProblem(Problem):
     def __init__(self):
         self.weight = 10
         self.bias = 2
         self.loss_function = torch.nn.MSELoss()
 
     def mean(self, x):
-        return x*self.weight + self.bias
+        return x * self.weight + self.bias
 
     def loss(self, target, prediction):
         return self.loss_function(prediction, target)
