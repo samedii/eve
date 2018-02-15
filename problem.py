@@ -13,8 +13,8 @@ class ToyProblem(Problem):
         self.bias = 2
         self.loss_function = torch.nn.MSELoss()
 
-    def mean(self, x):
-        return x * self.weight + self.bias
+    def mean(self, data):
+        return data*self.weight + self.bias
 
     def loss(self, target, prediction):
         return self.loss_function(prediction, target)
@@ -25,3 +25,8 @@ class ToyProblem(Problem):
 
     def generate_target(self, data):
         return self.mean(data) + torch.FloatTensor(data.size()).normal_(0, 0.1)
+
+
+class ToyProblem2(ToyProblem):
+    def mean(self, data):
+        return data**2*self.weight + self.bias
