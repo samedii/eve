@@ -16,13 +16,22 @@ Residual structure? Both for hyper network and prediction network.
 Consider changing the plan over the course of development.
 
 ## Chapter 1 - Prediction model for toy problem
-Train model using backprop.
+* Train model using backprop.
+* Linear and quadratic toy problems
+    * Single input
+    * Single output
+    * MSE error
+* Network: 1x5, 5x5, 5x1
+* ReLU activations
 
-Needed classes:
-* Problem
-    * ToyProblem
-* PredictionModel
-    * ToyPredictionModel
+![Chapter 1 - predictions vs outcomes](chapter1.png)
+
+## Chapter 2 - Hyper prediction model for toy problem
+Create network in chapter 1 using a hyper network
+* Hyper network: 5x10, 10x10, 10x1
+* ReLU activations
+
+![Chapter 2 - predictions vs outcomes](chapter2.png)
 
 ## End goal
 Changing environment?
