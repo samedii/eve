@@ -68,7 +68,8 @@ class HyperModel(nn.Module):
         self.layer3_bias = self.calculate_layer_bias(2)
 
     def forward(self, x):
-        self.calculate_layers()  # probably want to cache this for batches
+        if self.training:
+            self.calculate_layers()
 
         x = x@self.layer1_weight + self.layer1_bias
         x = F.relu(x)
