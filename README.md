@@ -44,20 +44,24 @@ Original performance of network with convolutional layers:
 After replacing with linear layers and decreasing size:
 
     Average loss: 0.2139, Accuracy: 9387/10000 (94%)
+    
+* Network 28x28x10, 10x10, 10x10
 
 ## Chapter 4 - Hyper prediction model for mnist problem
 Create network in chapter 3 using a hyper network.
+* Network 28x28x10, 10x10, 10x10
+* Hyper network 5x50, 50x20, 20x20, 20x20, 20x20, 20x1 
+  (around 1/4th of the weights of the network)
 
 Hyper prediction model performance:
 
-    Average loss: 1.2634, Accuracy: 5990/10000 (60%)
+    Average loss: 0.5999, Accuracy: 8236/10000 (82%)
 
-This is worse than a linear model. Have not spent much time on 
-hyperparameters and it may be possible to get a lot better.
-At first it was stuck at 10% accuracy. It seems to be very 
-sensitive. Added batch normalization
+This is worse than a linear model. May be possible to get a 
+lot better. At first it was stuck at 10% accuracy. It seems 
+to be very sensitive. Added batch normalization
 
-The endgoal of residual hypernetworks should be simpler than the 
+The end goal of residual hypernetworks should be simpler than the 
 normal hyper networks? Only need to say what change we would like 
 to see in the weights
 
